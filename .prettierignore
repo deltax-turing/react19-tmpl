@@ -1,0 +1,19 @@
+# Build output
+dist/
+.output.js
+
+# Local config files
+*.local
+
+# Node dependencies
+node_modules/
+
+# Static resources
+public/
+**/*.svg
+**/*.sh
+
+# Cache / temp / TS
+.cache/
+tmp/
+*.tsbuildinfo
