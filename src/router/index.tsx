@@ -4,6 +4,7 @@ import AIComp from '@/pages/about/AI'
 import ESSComp from '@/pages/about/ESS'
 import UserComp from '@/pages/user'
 import UnityComp from '@/pages/unity'
+import FontComp from '@/pages/font'
 import { createBrowserRouter, Navigate } from 'react-router-dom'
 
 export const router = createBrowserRouter([
@@ -37,5 +38,9 @@ export const router = createBrowserRouter([
   {
     path: '/unity',
     Component: UnityComp,
+  },
+  {
+    path: '/font',
+    Component: FontComp,
   },
 ])
