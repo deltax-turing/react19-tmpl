@@ -44,23 +44,21 @@ interface UserState extends PersistedState, TemporaryState {
 export const useUserStore = create<UserState>()(
   devtools(
     persist(
-      immer<UserState>(set => ({
-        // 持久化的数据
+      immer<UserState>((set) => ({
         users: {},
 
-        // 临时数据（不会被持久化）
         currentUserId: null,
         currentFilter: 'all',
         isLoading: false,
 
-        addUser: user =>
-          set(state => {
+        addUser: (user) =>
+          set((state) => {
             state.users[user.id] = user
             console.log('Added user with immer')
           }),
 
         updateUserName: (id, name) =>
-          set(state => {
+          set((state) => {
             if (state.users[id]) {
               state.users[id].name = name
               console.log('Updated name with immer')
@@ -68,14 +66,14 @@ export const useUserStore = create<UserState>()(
           }),
 
         updateUserAge: (id, age) =>
-          set(state => {
+          set((state) => {
             if (state.users[id]) {
               state.users[id].age = age
             }
           }),
 
         updateUserCity: (id, city) =>
-          set(state => {
+          set((state) => {
             if (state.users[id]) {
               state.users[id].address.city = city
               console.log('Updated city with immer (nested object)')
@@ -83,7 +81,7 @@ export const useUserStore = create<UserState>()(
           }),
 
         addTodo: (userId, todo) =>
-          set(state => {
+          set((state) => {
             if (state.users[userId]) {
               state.users[userId].todos.push(todo)
               console.log('Added todo with immer (array push)')
@@ -91,10 +89,10 @@ export const useUserStore = create<UserState>()(
           }),
 
         toggleTodo: (userId, todoId) =>
-          set(state => {
+          set((state) => {
             const user = state.users[userId]
             if (user) {
-              const todo = user.todos.find(t => t.id === todoId)
+              const todo = user.todos.find((t) => t.id === todoId)
               if (todo) {
                 todo.completed = !todo.completed
                 console.log('Toggled todo with immer')
@@ -103,16 +101,16 @@ export const useUserStore = create<UserState>()(
           }),
 
         deleteTodo: (userId, todoId) =>
-          set(state => {
+          set((state) => {
             const user = state.users[userId]
             if (user) {
-              user.todos = user.todos.filter(t => t.id !== todoId)
+              user.todos = user.todos.filter((t) => t.id !== todoId)
               console.log('Deleted todo with immer')
             }
           }),
 
-        setCurrentUser: id =>
-          set(state => {
+        setCurrentUser: (id) =>
+          set((state) => {
             state.currentUserId = id
           }),
       })),
@@ -121,8 +119,8 @@ export const useUserStore = create<UserState>()(
         partialize: (state): PersistedState => ({
           users: state.users,
         }),
-      }
+      },
     ),
-    { name: 'UserStore' }
-  )
+    { name: 'UserStore' },
+  ),
 )

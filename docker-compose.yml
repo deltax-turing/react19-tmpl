@@ -8,9 +8,7 @@ services:
       - '80:80'
       - '443:443'
     volumes:
-      # 开发模式: 可以热更新 nginx 配置 (生产环境可以注释掉)
       - ./nginx.conf:/etc/nginx/conf.d/nginx.conf:ro
-      # 如果需要查看 nginx 日志
       - nginx-logs:/var/log/nginx
     restart: unless-stopped
     networks:

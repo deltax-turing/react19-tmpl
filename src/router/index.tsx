@@ -3,7 +3,6 @@ import About from '@/pages/about'
 import AIComp from '@/pages/about/AI'
 import ESSComp from '@/pages/about/ESS'
 import UserComp from '@/pages/user'
-import UnityComp from '@/pages/unity'
 import FontComp from '@/pages/font'
 import Tailwind from '@/pages/tailwind'
 import { createBrowserRouter, Navigate } from 'react-router-dom'
@@ -35,10 +34,6 @@ export const router = createBrowserRouter([
   {
     path: '/user/:id',
     Component: UserComp,
-  },
-  {
-    path: '/unity',
-    Component: UnityComp,
   },
   {
     path: '/font',
