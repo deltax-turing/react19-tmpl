@@ -5,6 +5,7 @@ import ESSComp from '@/pages/about/ESS'
 import UserComp from '@/pages/user'
 import UnityComp from '@/pages/unity'
 import FontComp from '@/pages/font'
+import Tailwind from '@/pages/tailwind'
 import { createBrowserRouter, Navigate } from 'react-router-dom'
 
 export const router = createBrowserRouter([
@@ -42,5 +43,9 @@ export const router = createBrowserRouter([
   {
     path: '/font',
     Component: FontComp,
+  },
+  {
+    path: '/tailwind',
+    Component: Tailwind,
   },
 ])
