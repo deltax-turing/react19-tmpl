@@ -25,5 +25,8 @@
         "proseWrap": "always"
       }
     }
-  ]
+  ],
+  "plugins": ["prettier-plugin-tailwindcss"],
+  "tailwindStylesheet": "./src/styles/tailwind.css",
+  "tailwindFunctions": ["clsx"]
 }

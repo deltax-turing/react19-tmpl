@@ -43,13 +43,13 @@ export default function UnityComp() {
   }
 
   return (
-    <div className="w-full h-full rounded-lg shadow-sm flex" style={{ padding: '16px' }}>
+    <div className="flex h-full w-full rounded-lg shadow-sm" style={{ padding: '16px' }}>
       {/* Empty static 3D visualization area */}
       <div style={{ width: `${myWidth}px`, height: '100%', background: 'blue' }}>
         <button onClick={handleClick}>change width</button>
       </div>
-      <div className="bg-gray-100 flex-1 h-full">
-        <Unity unityProvider={unityProvider} className="w-full h-full" />
+      <div className="h-full flex-1 bg-gray-100">
+        <Unity unityProvider={unityProvider} className="h-full w-full" />
       </div>
     </div>
   )

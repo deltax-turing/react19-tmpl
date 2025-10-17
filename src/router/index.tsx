@@ -3,9 +3,9 @@ import About from '@/pages/about'
 import AIComp from '@/pages/about/AI'
 import ESSComp from '@/pages/about/ESS'
 import UserComp from '@/pages/user'
-import UnityComp from '@/pages/unity'
 import FontComp from '@/pages/font'
 import Tailwind from '@/pages/tailwind'
+import PopoverComp from '@/pages/popover'
 import { createBrowserRouter, Navigate } from 'react-router-dom'
 
 export const router = createBrowserRouter([
@@ -37,15 +37,15 @@ export const router = createBrowserRouter([
     Component: UserComp,
   },
   {
-    path: '/unity',
-    Component: UnityComp,
-  },
-  {
     path: '/font',
     Component: FontComp,
   },
   {
     path: '/tailwind',
     Component: Tailwind,
+  },
+  {
+    path: '/popover',
+    Component: PopoverComp,
   },
 ])
